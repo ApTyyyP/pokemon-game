@@ -9,12 +9,12 @@ const PokemonCard = ({ id, name, img, type, values }) => {
     const [isActive, setActive] = useState(false);
 
     const handleClick = () => {
-        setActive(!isActive);
+        setActive(prev => !prev);
     }
 
     return (
         <div className={s.root} onClick={handleClick}>
-              <div className={`{s.pokemonCard} ${isActive ? s.pokemonCard : ''}`}>
+              <div className={`${s.pokemonCard} ${isActive && s.active}`}>
                 <div className={s.cardFront}>
                     <div className={`${s.wrap} ${s.front}`}>
                         <div className={`${s.pokemon} ${s[type]}`}>
